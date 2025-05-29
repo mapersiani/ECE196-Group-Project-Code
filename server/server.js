@@ -37,7 +37,6 @@ app.post("/login", (req, res) => {
 
 // ─── Auth middleware ──────────────────────────────────
 app.use((req, res, next) => {
-  // allow these paths without auth
   const publicPaths = [
     "/login",
     "/login.css",
@@ -53,8 +52,6 @@ app.use((req, res, next) => {
 
 // ─── Static & other routes ───────────────────────────
 app.use(express.static(path.join(__dirname, "../www")));
-
-// (your existing subscribe/MQTT bridge logic here…)
 
 app.listen(3000, "0.0.0.0", () =>
   console.log("Server running at http://0.0.0.0:3000")

@@ -11,7 +11,7 @@ if ("serviceWorker" in navigator) {
 // ────────────────────────────────────────
 // MQTT Client Setup
 // ────────────────────────────────────────
-const client = mqtt.connect("ws://192.168.68.76:9001");
+const client = mqtt.connect("ws://192.0.0.2:9001");
 
 client.on("error", (err) => {
   console.error("MQTT Connection error:", err);
@@ -39,6 +39,7 @@ client.on("message", (topic, payload) => {
 
   switch (topic) {
     case "Garage/Door/State":
+      console.log(`Door state update: ${msg}`);
       handleDoorState(msg);
       break;
 
@@ -110,7 +111,21 @@ function handleDoorState(state) {
   // Update button + status text
   const btn = document.getElementById("toggle");
   btn.disabled = false;
-  btn.textContent = state === "OPEN" ? "Close Door" : "Open Door";
+  
+
+  console.log()
+  console.log(`Door state: ${state}`);
+  console.log(doorState == "OPEN");
+
+
+  const normalizedState = state.trim().toUpperCase();
+  if (normalizedState === "OPEN") {
+    btn.textContent = "Close Door";
+  } else if (normalizedState === "CLOSED") {
+    btn.textContent = "Open Door";
+  } else {
+    btn.textContent = "Unknown State";
+  }
   document.getElementById("status").textContent = state;
 
   addLogEntry(`Door ${state}`);

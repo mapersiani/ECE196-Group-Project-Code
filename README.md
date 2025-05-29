@@ -1,6 +1,6 @@
 # Garage Monitor
 
-Serves a PWA-ready web client and a simple Node.js backend for MQTT ↔ Push in the future.
+Serves a PWA-ready web client and a simple Node.js backend for MQTT
 
 ## Setup
 
