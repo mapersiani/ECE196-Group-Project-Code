@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Garage Door Monitor</title>
+  <!-- PWA manifest for future install/push support -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <!-- MQTT connection status dot (green/red) -->
+    <div id="status-indicator"></div>
+    <h1>Garage Door Controller</h1>
+    <!-- Button to send OPEN/CLOSE commands -->
+    <button id="toggle"></button>
+    <!-- Display the current door state -->
+    <p>
+      Door Status: 
+      <span id="status" class="value"></span>
+    </p>
+    <!-- Display the current temperature -->
+    <p>
+      Temperature: 
+      <span id="temperature" class="value"></span>
+    </p>
+    <!-- CO level colored indicator -->
+    <div class="gas-row">
+      <p>CO Level:</p>
+      <div id="gas-indicator"></div>
+    </div>
+  </div>
+
+<!-- Log dropdown bar -->
+<div id="log-bar" class="log-bar">
+  <span>Event Log</span>
+  <span id="caret">◀</span>
+</div>
+
+<!-- Log panel -->
+<div id="log-panel" class="log-panel hidden">
+  <ul id="log-list"></ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,130 @@
+/* ────────────────────────────────────────
+   Global page styles
+──────────────────────────────────────── */
+body {
+    font-family: sans-serif;
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+/* ────────────────────────────────────────
+    Container box for the UI
+──────────────────────────────────────── */
+.container {
+  position: relative;
+  max-width: 400px;
+  margin: auto;
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: rgba(113, 130, 92, 0.51);
+}
+  
+  /* ────────────────────────────────────────
+     Headings, buttons, and paragraphs
+  ──────────────────────────────────────── */
+  h1 {
+    font-size: 2rem;
+    margin: 1rem 0;
+  }
+  
+  button {
+    font-size: 1.25rem;
+    padding: 3rem;
+  }
+  
+  p {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+  }
+  
+  span.value {
+    font-weight: bold;
+  }
+  
+  /* ────────────────────────────────────────
+     MQTT connection status dot
+  ──────────────────────────────────────── */
+  #status-indicator {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 10px;
+    height: 10px;
+    background-color: red;    /* assumes “not connected” initially */
+    border: 1px solid black;
+    border-radius: 50%;
+  }
+  
+  /* ────────────────────────────────────────
+     CO level row layout
+  ──────────────────────────────────────── */
+  .gas-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  /* CO level colored dot */
+  #gas-indicator {
+    width: 50px;
+    height: 15px;
+    background-color: gray;  /* default/unknown */
+    border: 1px solid black;
+    border-radius: 5%;
+  }
+
+/* ────────────────────────────────────────
+   Log Dropdown Bar
+──────────────────────────────────────── */
+.log-bar {
+  max-width: 400px;
+  margin: 1rem auto 0;
+  padding: 0.5rem 1rem;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.log-bar.expanded #caret {
+  transform: rotate(270deg);
+}
+
+/* ────────────────────────────────────────
+   Log Panel
+──────────────────────────────────────── */
+.log-panel {
+  max-width: 400px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-top: none;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 1rem;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.hidden {
+  display: none;
+}
+
+#log-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#log-list li {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.25rem;
+}
