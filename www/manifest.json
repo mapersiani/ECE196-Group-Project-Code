@@ -1,10 +1,12 @@
 {
-  "name": "Garage Door Monitor",
-  "short_name": "GarageMon",
-  "start_url": "/index.html",
+  "name": "Garage Controller",
+  "short_name": "GarageCtl",
+  "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
+  "background_color": "#71825c",
+  "theme_color": "#71825c",
   "icons": [
-    
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
   ]
 }
